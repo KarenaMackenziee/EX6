@@ -1,0 +1,26 @@
+pipeline{
+agent any
+Stages{
+stage( 'Checkout code'){
+steps{
+git 'https://github.com/KarenaMackenziee/EX6/new/main'
+}
+}
+stage('Build'){
+steps{
+sh 'javac main.java'
+}
+}
+stage('Test'){
+steps{
+sh 'java main'
+}
+}
+stage('Deploy'){
+steps{
+echo 'Deploying application'
+}
+}
+}
+}
+}
